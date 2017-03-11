@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a70fd305-a78d-428c-a932-9d10dcb9eabc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:61250/PJService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PJService.wsdl" MetadataType="Wsdl" ID="3f6c226d-d418-4e32-acef-525cbf81ac93" SourceId="1" SourceUrl="http://localhost:61250/PJService.svc?wsdl" />
+    <MetadataFile FileName="PJService.disco" MetadataType="Disco" ID="91d99b83-9fcb-4149-9fcf-d3277c89f667" SourceId="1" SourceUrl="http://localhost:61250/PJService.svc?disco" />
+    <MetadataFile FileName="PJService.xsd" MetadataType="Schema" ID="7b0fbf47-27aa-4955-8bf1-279aeafd8e31" SourceId="1" SourceUrl="http://localhost:61250/PJService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PJService1.xsd" MetadataType="Schema" ID="cf2bb157-804b-47c8-946e-5e2cb8fde435" SourceId="1" SourceUrl="http://localhost:61250/PJService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PJService2.xsd" MetadataType="Schema" ID="3ef43c0b-ea80-40eb-a2f7-61c0b807f4fb" SourceId="1" SourceUrl="http://localhost:61250/PJService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PJService3.xsd" MetadataType="Schema" ID="2e02b041-ded6-43eb-9f70-e37562f4d67a" SourceId="1" SourceUrl="http://localhost:61250/PJService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

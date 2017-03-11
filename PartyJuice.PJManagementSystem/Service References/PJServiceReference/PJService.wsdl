@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PJService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:61250/PJService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:61250/PJService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:61250/PJService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" />
+      <xsd:import schemaLocation="http://localhost:61250/PJService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPJService_GetWarehouses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWarehouses" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetWarehouses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWarehousesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetDrinksByWarehouseId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrinksByWarehouseId" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetDrinksByWarehouseId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrinksByWarehouseIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetClients_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClients" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetClients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetClientsWhoHasBirthday_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientsWhoHasBirthday" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetClientsWhoHasBirthday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientsWhoHasBirthdayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetSaleOrdersByWarehouseId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSaleOrdersByWarehouseId" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetSaleOrdersByWarehouseId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSaleOrdersByWarehouseIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetSaleOrdersByClientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSaleOrdersByClientId" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetSaleOrdersByClientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSaleOrdersByClientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetPurchaseInvoicesByWarehouseId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPurchaseInvoicesByWarehouseId" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetPurchaseInvoicesByWarehouseId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPurchaseInvoicesByWarehouseIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetPurchaseInvoicesByStoreKeeperId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPurchaseInvoicesByStoreKeeperId" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetPurchaseInvoicesByStoreKeeperId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPurchaseInvoicesByStoreKeeperIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetClientInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetClientInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_UserValidation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserValidation" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_UserValidation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserValidationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPJService">
+    <wsdl:operation name="GetWarehouses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetWarehouses" message="tns:IPJService_GetWarehouses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetWarehousesResponse" message="tns:IPJService_GetWarehouses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDrinksByWarehouseId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetDrinksByWarehouseId" message="tns:IPJService_GetDrinksByWarehouseId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetDrinksByWarehouseIdResponse" message="tns:IPJService_GetDrinksByWarehouseId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClients">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetClients" message="tns:IPJService_GetClients_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetClientsResponse" message="tns:IPJService_GetClients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientsWhoHasBirthday">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetClientsWhoHasBirthday" message="tns:IPJService_GetClientsWhoHasBirthday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetClientsWhoHasBirthdayResponse" message="tns:IPJService_GetClientsWhoHasBirthday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleOrdersByWarehouseId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetSaleOrdersByWarehouseId" message="tns:IPJService_GetSaleOrdersByWarehouseId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetSaleOrdersByWarehouseIdResponse" message="tns:IPJService_GetSaleOrdersByWarehouseId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleOrdersByClientId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetSaleOrdersByClientId" message="tns:IPJService_GetSaleOrdersByClientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetSaleOrdersByClientIdResponse" message="tns:IPJService_GetSaleOrdersByClientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseInvoicesByWarehouseId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetPurchaseInvoicesByWarehouseId" message="tns:IPJService_GetPurchaseInvoicesByWarehouseId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetPurchaseInvoicesByWarehouseIdResponse" message="tns:IPJService_GetPurchaseInvoicesByWarehouseId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseInvoicesByStoreKeeperId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetPurchaseInvoicesByStoreKeeperId" message="tns:IPJService_GetPurchaseInvoicesByStoreKeeperId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetPurchaseInvoicesByStoreKeeperIdResponse" message="tns:IPJService_GetPurchaseInvoicesByStoreKeeperId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetClientInfo" message="tns:IPJService_GetClientInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetClientInfoResponse" message="tns:IPJService_GetClientInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserValidation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/UserValidation" message="tns:IPJService_UserValidation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/UserValidationResponse" message="tns:IPJService_UserValidation_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPJService" type="tns:IPJService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWarehouses">
+      <soap:operation soapAction="http://tempuri.org/IPJService/GetWarehouses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrinksByWarehouseId">
+      <soap:operation soapAction="http://tempuri.org/IPJService/GetDrinksByWarehouseId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClients">
+      <soap:operation soapAction="http://tempuri.org/IPJService/GetClients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientsWhoHasBirthday">
+      <soap:operation soapAction="http://tempuri.org/IPJService/GetClientsWhoHasBirthday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleOrdersByWarehouseId">
+      <soap:operation soapAction="http://tempuri.org/IPJService/GetSaleOrdersByWarehouseId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSaleOrdersByClientId">
+      <soap:operation soapAction="http://tempuri.org/IPJService/GetSaleOrdersByClientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseInvoicesByWarehouseId">
+      <soap:operation soapAction="http://tempuri.org/IPJService/GetPurchaseInvoicesByWarehouseId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchaseInvoicesByStoreKeeperId">
+      <soap:operation soapAction="http://tempuri.org/IPJService/GetPurchaseInvoicesByStoreKeeperId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientInfo">
+      <soap:operation soapAction="http://tempuri.org/IPJService/GetClientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserValidation">
+      <soap:operation soapAction="http://tempuri.org/IPJService/UserValidation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PJService">
+    <wsdl:port name="BasicHttpBinding_IPJService" binding="tns:BasicHttpBinding_IPJService">
+      <soap:address location="http://localhost:61250/PJService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

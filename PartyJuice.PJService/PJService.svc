@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PartyJuice.PJService.PJService" CodeBehind="PJService.svc.cs" %>
