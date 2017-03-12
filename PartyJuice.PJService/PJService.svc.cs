@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using PartyJuice.DataAccess;
 using PartyJuice.DbEntity;
 using PartyJuice.Logic;
@@ -10,7 +11,13 @@ namespace PartyJuice.PJService
     // NOTE: In order to launch WCF Test Client for testing this service, please select AlcShopService.svc or AlcShopService.svc.cs at the Solution Explorer and start debugging.
     public class PJService : IPJService
     {
-        private readonly BaseBusinessLogic<User> _userLogic = new BaseBusinessLogic<User>(); 
+        private readonly BaseBusinessLogic<User> _userLogic = new BaseBusinessLogic<User>();
+        private readonly PJShopBusinessLogic _shopLogic = new PJShopBusinessLogic();
+        public List<PJShop> GetShops()
+        {
+            return _shopLogic.GetAll().ToList();
+        }
+
         public List<Warehouse> GetWarehouses()
         {
             throw new NotImplementedException();

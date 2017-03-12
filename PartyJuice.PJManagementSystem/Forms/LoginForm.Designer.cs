@@ -37,10 +37,13 @@
             this.btCancel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbShops = new System.Windows.Forms.ComboBox();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.statusLogin = new System.Windows.Forms.StatusStrip();
             this.tsError = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStrip.SuspendLayout();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsLoginLable = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripLogin = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -115,16 +118,18 @@
             this.cbShops.Size = new System.Drawing.Size(224, 24);
             this.cbShops.TabIndex = 4;
             // 
-            // statusStrip
+            // statusLogin
             // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLogin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsError,
-            this.toolStripStatusLabel1});
-            this.statusStrip.Location = new System.Drawing.Point(0, 130);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(317, 22);
-            this.statusStrip.TabIndex = 8;
-            this.statusStrip.Text = "statusStrip1";
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.tsLoginLable,
+            this.toolStripLogin});
+            this.statusLogin.Location = new System.Drawing.Point(0, 130);
+            this.statusLogin.Name = "statusLogin";
+            this.statusLogin.Size = new System.Drawing.Size(317, 22);
+            this.statusLogin.TabIndex = 8;
             // 
             // tsError
             // 
@@ -137,13 +142,29 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
+            // 
+            // tsLoginLable
+            // 
+            this.tsLoginLable.Name = "tsLoginLable";
+            this.tsLoginLable.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripLogin
+            // 
+            this.toolStripLogin.Name = "toolStripLogin";
+            this.toolStripLogin.Size = new System.Drawing.Size(0, 17);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(317, 152);
             this.ControlBox = false;
-            this.Controls.Add(this.statusStrip);
+            this.Controls.Add(this.statusLogin);
             this.Controls.Add(this.cbShops);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btCancel);
@@ -160,8 +181,9 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authorization";
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
+            this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.statusLogin.ResumeLayout(false);
+            this.statusLogin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,8 +199,11 @@
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbShops;
-        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.StatusStrip statusLogin;
         private System.Windows.Forms.ToolStripStatusLabel tsError;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel tsLoginLable;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripLogin;
     }
 }

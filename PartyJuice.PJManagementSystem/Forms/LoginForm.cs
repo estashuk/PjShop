@@ -18,21 +18,39 @@ namespace PartyJuice.PJManagementSystem.Forms
             InitializeComponent();
         }
 
+        public PJShop GetSelectedShop()
+        {
+            return (PJShop) cbShops.SelectedItem;
+        }
         private void btLogin_Click(object sender, EventArgs e)
         {
             btLogin.Enabled = false;
             using (var client = new PJServiceClient())
             {
-                if (client.UserValidation(tbLogin.Text, tbPassword.Text))
+                if (client.UserValidation(tbLogin.Text, tbPassword.Text) && cbShops.SelectedItem != null)
                 {
                     this.DialogResult = DialogResult.OK;
                 }
-                else
+                else if(!client.UserValidation(tbLogin.Text, tbPassword.Text))
                 {
                     tsError.Text = @"Entered Login or Password is invalid!";
                 }
+                else if (cbShops.SelectedItem == null)
+                {
+                    tsError.Text = @"Please choose shop to enter!";
+                }
+                
             }
             btLogin.Enabled = true;
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            using (var client = new PJServiceClient())
+            {
+                PJShop[] shopList = client.GetShops();
+                cbShops.Items.AddRange(shopList);
+            }
         }
     }
 }

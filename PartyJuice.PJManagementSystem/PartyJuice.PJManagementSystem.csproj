@@ -116,6 +116,9 @@
     <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.Drink.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.PJShop.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.PurchaseInvoice.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PartyJuice.DbEntity
 {
-    public class PJShop : IdEntity
+    public class PJShop : NameEntity
     {
         [Required]
         public ICollection<Warehouse> Warehouses { get; set; }

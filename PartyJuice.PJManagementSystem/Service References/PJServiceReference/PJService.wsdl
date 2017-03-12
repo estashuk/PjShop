@@ -8,6 +8,12 @@
       <xsd:import schemaLocation="http://localhost:61250/PJService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IPJService_GetShops_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShops" />
+  </wsdl:message>
+  <wsdl:message name="IPJService_GetShops_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopsResponse" />
+  </wsdl:message>
   <wsdl:message name="IPJService_GetWarehouses_InputMessage">
     <wsdl:part name="parameters" element="tns:GetWarehouses" />
   </wsdl:message>
@@ -69,6 +75,10 @@
     <wsdl:part name="parameters" element="tns:UserValidationResponse" />
   </wsdl:message>
   <wsdl:portType name="IPJService">
+    <wsdl:operation name="GetShops">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetShops" message="tns:IPJService_GetShops_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetShopsResponse" message="tns:IPJService_GetShops_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetWarehouses">
       <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetWarehouses" message="tns:IPJService_GetWarehouses_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetWarehousesResponse" message="tns:IPJService_GetWarehouses_OutputMessage" />
@@ -112,6 +122,15 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IPJService" type="tns:IPJService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetShops">
+      <soap:operation soapAction="http://tempuri.org/IPJService/GetShops" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetWarehouses">
       <soap:operation soapAction="http://tempuri.org/IPJService/GetWarehouses" style="document" />
       <wsdl:input>

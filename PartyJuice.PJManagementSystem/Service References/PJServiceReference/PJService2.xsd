@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:61250/PJService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" />
-  <xs:complexType name="ArrayOfWarehouse">
+  <xs:complexType name="ArrayOfPJShop">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Warehouse" nillable="true" type="tns:Warehouse" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PJShop" nillable="true" type="tns:PJShop" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfWarehouse" nillable="true" type="tns:ArrayOfWarehouse" />
-  <xs:complexType name="Warehouse">
+  <xs:element name="ArrayOfPJShop" nillable="true" type="tns:ArrayOfPJShop" />
+  <xs:complexType name="PJShop">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:NameEntity">
         <xs:sequence>
-          <xs:element minOccurs="0" name="DrinkElements" nillable="true" type="tns:ArrayOfWarehouseElement" />
+          <xs:element minOccurs="0" name="ShopAddress" nillable="true" type="tns:Address" />
+          <xs:element minOccurs="0" name="ShopPhoneNumbers" nillable="true" type="tns:ArrayOfPhoneNumber" />
+          <xs:element minOccurs="0" name="Warehouses" nillable="true" type="tns:ArrayOfWarehouse" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Warehouse" nillable="true" type="tns:Warehouse" />
+  <xs:element name="PJShop" nillable="true" type="tns:PJShop" />
   <xs:complexType name="NameEntity">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:IdEntity">
@@ -33,6 +35,51 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="IdEntity" nillable="true" type="tns:IdEntity" />
+  <xs:complexType name="Address">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NameEntity">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" minOccurs="0" name="Country" type="q1:Countries" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Town" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="ArrayOfPhoneNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhoneNumber" nillable="true" type="tns:ArrayOfPhoneNumber" />
+  <xs:complexType name="PhoneNumber">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdEntity">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" minOccurs="0" name="Kind" type="q2:PhoneNumberKind" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
+  <xs:complexType name="ArrayOfWarehouse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Warehouse" nillable="true" type="tns:Warehouse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWarehouse" nillable="true" type="tns:ArrayOfWarehouse" />
+  <xs:complexType name="Warehouse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NameEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DrinkElements" nillable="true" type="tns:ArrayOfWarehouseElement" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Warehouse" nillable="true" type="tns:Warehouse" />
   <xs:complexType name="ArrayOfWarehouseElement">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="WarehouseElement" nillable="true" type="tns:WarehouseElement" />
@@ -94,35 +141,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Producer" nillable="true" type="tns:Producer" />
-  <xs:complexType name="Address">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:NameEntity">
-        <xs:sequence>
-          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" minOccurs="0" name="Country" type="q1:Countries" />
-          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Town" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Address" nillable="true" type="tns:Address" />
-  <xs:complexType name="ArrayOfPhoneNumber">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPhoneNumber" nillable="true" type="tns:ArrayOfPhoneNumber" />
-  <xs:complexType name="PhoneNumber">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:IdEntity">
-        <xs:sequence>
-          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" minOccurs="0" name="Kind" type="q2:PhoneNumberKind" />
-          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
   <xs:complexType name="ArrayOfDrink">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Drink" nillable="true" type="tns:Drink" />

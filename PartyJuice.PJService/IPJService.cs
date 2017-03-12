@@ -10,6 +10,8 @@ namespace PartyJuice.PJService
     public interface IPJService
     {
         [OperationContract]
+        List<PJShop> GetShops();
+        [OperationContract]
         List<Warehouse> GetWarehouses();
         [OperationContract]
         List<Drink> GetDrinksByWarehouseId(Guid id);
