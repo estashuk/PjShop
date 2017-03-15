@@ -37,10 +37,11 @@
   <xs:element name="IdEntity" nillable="true" type="tns:IdEntity" />
   <xs:complexType name="Address">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:NameEntity">
+      <xs:extension base="tns:IdEntity">
         <xs:sequence>
           <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" minOccurs="0" name="Country" type="q1:Countries" />
           <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Town" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -141,12 +142,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Producer" nillable="true" type="tns:Producer" />
-  <xs:complexType name="ArrayOfDrink">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Drink" nillable="true" type="tns:Drink" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfDrink" nillable="true" type="tns:ArrayOfDrink" />
   <xs:complexType name="ArrayOfClient">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Client" nillable="true" type="tns:Client" />

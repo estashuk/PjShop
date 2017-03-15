@@ -15,7 +15,17 @@ namespace PartyJuice.PJService
         private readonly PJShopBusinessLogic _shopLogic = new PJShopBusinessLogic();
         public List<PJShop> GetShops()
         {
-            return _shopLogic.GetAll().ToList();
+            return _shopLogic.GetAllShops().ToList();
+        }
+
+        public List<Warehouse> GetWarehouses(PJShop shop)
+        {
+            return shop.Warehouses?.ToList();
+        }
+
+        public List<WarehouseElement> GetWarehouseElements(Warehouse warehouse)
+        {
+            return _shopLogic.GetWarehouseElements(warehouse).ToList();
         }
 
         public List<Warehouse> GetWarehouses()

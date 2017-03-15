@@ -12,9 +12,9 @@ namespace PartyJuice.PJService
         [OperationContract]
         List<PJShop> GetShops();
         [OperationContract]
-        List<Warehouse> GetWarehouses();
+        List<Warehouse> GetWarehouses(PJShop shop);
         [OperationContract]
-        List<Drink> GetDrinksByWarehouseId(Guid id);
+        List<WarehouseElement> GetWarehouseElements(Warehouse warehouse);
         [OperationContract]
         List<Client> GetClients();
         [OperationContract]

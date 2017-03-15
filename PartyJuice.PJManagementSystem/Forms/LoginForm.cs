@@ -16,11 +16,17 @@ namespace PartyJuice.PJManagementSystem.Forms
         public LoginForm()
         {
             InitializeComponent();
+
         }
 
         public PJShop GetSelectedShop()
         {
             return (PJShop) cbShops.SelectedItem;
+        }
+
+        public string GetUserLogin()
+        {
+            return tbLogin.Text;
         }
         private void btLogin_Click(object sender, EventArgs e)
         {
@@ -50,6 +56,7 @@ namespace PartyJuice.PJManagementSystem.Forms
             {
                 PJShop[] shopList = client.GetShops();
                 cbShops.Items.AddRange(shopList);
+                cbShops.SelectedItem = cbShops.Items[0];
             }
         }
     }

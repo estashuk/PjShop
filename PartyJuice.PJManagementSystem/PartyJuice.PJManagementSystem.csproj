@@ -113,9 +113,6 @@
     <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.Client.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.Drink.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.PJShop.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -126,6 +123,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.Warehouse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PJServiceReference\PJService.wsdl" />

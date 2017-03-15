@@ -20,11 +20,11 @@
   <wsdl:message name="IPJService_GetWarehouses_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetWarehousesResponse" />
   </wsdl:message>
-  <wsdl:message name="IPJService_GetDrinksByWarehouseId_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDrinksByWarehouseId" />
+  <wsdl:message name="IPJService_GetWarehouseElements_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWarehouseElements" />
   </wsdl:message>
-  <wsdl:message name="IPJService_GetDrinksByWarehouseId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDrinksByWarehouseIdResponse" />
+  <wsdl:message name="IPJService_GetWarehouseElements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWarehouseElementsResponse" />
   </wsdl:message>
   <wsdl:message name="IPJService_GetClients_InputMessage">
     <wsdl:part name="parameters" element="tns:GetClients" />
@@ -83,9 +83,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetWarehouses" message="tns:IPJService_GetWarehouses_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetWarehousesResponse" message="tns:IPJService_GetWarehouses_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetDrinksByWarehouseId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetDrinksByWarehouseId" message="tns:IPJService_GetDrinksByWarehouseId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetDrinksByWarehouseIdResponse" message="tns:IPJService_GetDrinksByWarehouseId_OutputMessage" />
+    <wsdl:operation name="GetWarehouseElements">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetWarehouseElements" message="tns:IPJService_GetWarehouseElements_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPJService/GetWarehouseElementsResponse" message="tns:IPJService_GetWarehouseElements_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetClients">
       <wsdl:input wsaw:Action="http://tempuri.org/IPJService/GetClients" message="tns:IPJService_GetClients_InputMessage" />
@@ -140,8 +140,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDrinksByWarehouseId">
-      <soap:operation soapAction="http://tempuri.org/IPJService/GetDrinksByWarehouseId" style="document" />
+    <wsdl:operation name="GetWarehouseElements">
+      <soap:operation soapAction="http://tempuri.org/IPJService/GetWarehouseElements" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
