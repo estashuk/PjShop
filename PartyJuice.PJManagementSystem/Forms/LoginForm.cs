@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PartyJuice.PJManagementSystem.PJServiceReference;
+using PartyJuice.PJService.ModelsHelper;
 
 namespace PartyJuice.PJManagementSystem.Forms
 {
@@ -19,14 +20,18 @@ namespace PartyJuice.PJManagementSystem.Forms
 
         }
 
-        public PJShop GetSelectedShop()
+        public ShopModel GetSelectedShop()
         {
-            return (PJShop) cbShops.SelectedItem;
+            return (ShopModel) cbShops.SelectedItem;
         }
 
-        public string GetUserLogin()
+        public User GetUser()
         {
-            return tbLogin.Text;
+            using (var client = new PJServiceClient())
+            {
+                var user = client.GetUser(tbLogin.Text, tbPassword.Text);
+                return user;
+            }
         }
         private void btLogin_Click(object sender, EventArgs e)
         {
@@ -54,8 +59,9 @@ namespace PartyJuice.PJManagementSystem.Forms
         {
             using (var client = new PJServiceClient())
             {
-                PJShop[] shopList = client.GetShops();
+                var shopList = client.GetShops();
                 cbShops.Items.AddRange(shopList);
+                if(cbShops.Items.Count == 0) return;
                 cbShops.SelectedItem = cbShops.Items[0];
             }
         }

@@ -29,5 +29,11 @@ namespace PartyJuice.DataAccess
             return Context.Warehouses.Include(x => x.DrinkElements)
                 .FirstOrDefault(x => x.Id == id);
         }
+
+        public Warehouse GetByName(string name)
+        {
+            return Context.Warehouses.Include(x => x.DrinkElements)
+                .FirstOrDefault(x => x.Name == name);
+        }
     }
 }

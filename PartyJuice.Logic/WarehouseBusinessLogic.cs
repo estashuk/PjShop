@@ -12,5 +12,10 @@ namespace PartyJuice.Logic
         {
             return _warehouseRepository.GetById(entityId);
         }
+
+        public Warehouse GetByName(string name)
+        {
+            return _warehouseRepository.GetByName(name);
+        }
     }
 }

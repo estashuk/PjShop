@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:61250/PJService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" />
+  <xs:import schemaLocation="http://localhost:61250/PJService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PartyJuice.PJService.ModelsHelper" />
   <xs:import schemaLocation="http://localhost:61250/PJService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:61250/PJService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" />
   <xs:element name="GetShops">
     <xs:complexType>
       <xs:sequence />
@@ -10,35 +11,35 @@
   <xs:element name="GetShopsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" minOccurs="0" name="GetShopsResult" nillable="true" type="q1:ArrayOfPJShop" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PartyJuice.PJService.ModelsHelper" minOccurs="0" name="GetShopsResult" nillable="true" type="q1:ArrayOfShopModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetWarehouses">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" minOccurs="0" name="shop" nillable="true" type="q2:PJShop" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="shopId" type="q2:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetWarehousesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" minOccurs="0" name="GetWarehousesResult" nillable="true" type="q3:ArrayOfWarehouse" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PartyJuice.PJService.ModelsHelper" minOccurs="0" name="GetWarehousesResult" nillable="true" type="q3:ArrayOfWarehouseModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetWarehouseElements">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" minOccurs="0" name="warehouse" nillable="true" type="q4:Warehouse" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="warehouseId" type="q4:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetWarehouseElementsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" minOccurs="0" name="GetWarehouseElementsResult" nillable="true" type="q5:ArrayOfWarehouseElement" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PartyJuice.PJService.ModelsHelper" minOccurs="0" name="GetWarehouseElementsResult" nillable="true" type="q5:ArrayOfWarehouseElementModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -152,6 +153,85 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="UserValidationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" minOccurs="0" name="newUser" nillable="true" type="q18:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/PartyJuice.PJService.ModelsHelper" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q19:ArrayOfUserModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q20:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" minOccurs="0" name="GetUserResult" nillable="true" type="q21:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserLoginValidation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserLoginValidationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserLoginValidationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWarehouseElement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="elementId" type="q22:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWarehouseElementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/PartyJuice.PJService.ModelsHelper" minOccurs="0" name="GetWarehouseElementResult" nillable="true" type="q23:WarehouseElementModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

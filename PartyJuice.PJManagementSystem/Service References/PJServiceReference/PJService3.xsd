@@ -1,40 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:simpleType name="Countries">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="England" />
-      <xs:enumeration value="USA" />
-      <xs:enumeration value="France" />
-      <xs:enumeration value="Ukraine" />
-      <xs:enumeration value="Russia" />
-      <xs:enumeration value="Germany" />
-      <xs:enumeration value="Brazil" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="Countries" nillable="true" type="tns:Countries" />
-  <xs:simpleType name="PhoneNumberKind">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Mobile" />
-      <xs:enumeration value="Work" />
-      <xs:enumeration value="Home" />
-      <xs:enumeration value="Office" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="PhoneNumberKind" nillable="true" type="tns:PhoneNumberKind" />
-  <xs:simpleType name="Sex">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Male" />
-      <xs:enumeration value="Female" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="Sex" nillable="true" type="tns:Sex" />
-  <xs:simpleType name="Roles">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Admin" />
-      <xs:enumeration value="Manager" />
-      <xs:enumeration value="Seller" />
-      <xs:enumeration value="StoreKeeper" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="Roles" nillable="true" type="tns:Roles" />
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:61250/PJService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" />
+  <xs:complexType name="ArrayOfClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Client" nillable="true" type="tns:Client" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClient" nillable="true" type="tns:ArrayOfClient" />
+  <xs:complexType name="Client">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Card" nillable="true" type="tns:DiscountCard" />
+          <xs:element minOccurs="0" name="ClientsPhoneNumbers" nillable="true" type="tns:ArrayOfPhoneNumber" />
+          <xs:element minOccurs="0" name="FatherName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" minOccurs="0" name="Sex" type="q1:Sex" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Client" nillable="true" type="tns:Client" />
+  <xs:complexType name="IdEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdEntity" nillable="true" type="tns:IdEntity" />
+  <xs:complexType name="DiscountCard">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Discount" type="xs:int" />
+          <xs:element minOccurs="0" name="Number" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DiscountCard" nillable="true" type="tns:DiscountCard" />
+  <xs:complexType name="ArrayOfPhoneNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhoneNumber" nillable="true" type="tns:ArrayOfPhoneNumber" />
+  <xs:complexType name="PhoneNumber">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdEntity">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" minOccurs="0" name="Kind" type="q2:PhoneNumberKind" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhoneNumber" nillable="true" type="tns:PhoneNumber" />
+  <xs:complexType name="ArrayOfSaleOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SaleOrder" nillable="true" type="tns:SaleOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSaleOrder" nillable="true" type="tns:ArrayOfSaleOrder" />
+  <xs:complexType name="SaleOrder">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+          <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfWarehouseElement" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seller" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="TotalCost" type="xs:double" />
+          <xs:element minOccurs="0" name="Warehouse" nillable="true" type="tns:Warehouse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaleOrder" nillable="true" type="tns:SaleOrder" />
+  <xs:complexType name="ArrayOfWarehouseElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WarehouseElement" nillable="true" type="tns:WarehouseElement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWarehouseElement" nillable="true" type="tns:ArrayOfWarehouseElement" />
+  <xs:complexType name="WarehouseElement">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count" type="xs:int" />
+          <xs:element minOccurs="0" name="Drink" nillable="true" type="tns:Drink" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WarehouseElement" nillable="true" type="tns:WarehouseElement" />
+  <xs:complexType name="Drink">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NameEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DrinkType" nillable="true" type="tns:DrinkType" />
+          <xs:element minOccurs="0" name="Price" nillable="true" type="tns:Price" />
+          <xs:element minOccurs="0" name="Producer" nillable="true" type="tns:Producer" />
+          <xs:element minOccurs="0" name="Volume" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Drink" nillable="true" type="tns:Drink" />
+  <xs:complexType name="NameEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NameEntity" nillable="true" type="tns:NameEntity" />
+  <xs:complexType name="DrinkType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NameEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ParentDrinkType" nillable="true" type="tns:DrinkType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DrinkType" nillable="true" type="tns:DrinkType" />
+  <xs:complexType name="Price">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DrinkPrice" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Price" nillable="true" type="tns:Price" />
+  <xs:complexType name="Producer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NameEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address" />
+          <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="tns:ArrayOfPhoneNumber" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Producer" nillable="true" type="tns:Producer" />
+  <xs:complexType name="Address">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdEntity">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" minOccurs="0" name="Country" type="q3:Countries" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Town" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" minOccurs="0" name="Role" type="q4:Roles" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="Warehouse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NameEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DrinkElements" nillable="true" type="tns:ArrayOfWarehouseElement" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Warehouse" nillable="true" type="tns:Warehouse" />
+  <xs:complexType name="ArrayOfPurchaseInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PurchaseInvoice" nillable="true" type="tns:PurchaseInvoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPurchaseInvoice" nillable="true" type="tns:ArrayOfPurchaseInvoice" />
+  <xs:complexType name="PurchaseInvoice">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IdEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfWarehouseElement" />
+          <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StoreKeeper" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="Warehouse" nillable="true" type="tns:Warehouse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PurchaseInvoice" nillable="true" type="tns:PurchaseInvoice" />
 </xs:schema>

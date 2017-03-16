@@ -102,6 +102,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelsHelper\ShopModel.cs" />
+    <Compile Include="ModelsHelper\UserModel.cs" />
+    <Compile Include="ModelsHelper\WarehouseElementModel.cs" />
+    <Compile Include="ModelsHelper\WarehouseModel.cs" />
     <Compile Include="PJService.svc.cs">
       <DependentUpon>PJService.svc</DependentUpon>
     </Compile>

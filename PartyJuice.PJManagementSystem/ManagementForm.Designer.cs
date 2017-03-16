@@ -37,21 +37,29 @@
             this.statusMain = new System.Windows.Forms.StatusStrip();
             this.tsMainLable = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripMain = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tc = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lvWarehouseElements = new System.Windows.Forms.ListView();
             this.chProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.cbWarehouses = new System.Windows.Forms.ComboBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tbUser = new System.Windows.Forms.TabPage();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.lbName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lvUsers = new System.Windows.Forms.ListView();
+            this.chLogin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chPassword = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chRole = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btAddUser = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusMain.SuspendLayout();
-            this.tabControl.SuspendLayout();
+            this.tc.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tbUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -115,18 +123,19 @@
             this.toolStripMain.Name = "toolStripMain";
             this.toolStripMain.Size = new System.Drawing.Size(0, 17);
             // 
-            // tabControl
+            // tc
             // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Location = new System.Drawing.Point(0, 27);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(984, 410);
-            this.tabControl.TabIndex = 2;
+            this.tc.Controls.Add(this.tabPage1);
+            this.tc.Controls.Add(this.tbUser);
+            this.tc.Location = new System.Drawing.Point(0, 27);
+            this.tc.Name = "tc";
+            this.tc.SelectedIndex = 0;
+            this.tc.Size = new System.Drawing.Size(984, 410);
+            this.tc.TabIndex = 2;
+            this.tc.Click += new System.EventHandler(this.tcUsers_Click);
             // 
             // tabPage1
             // 
@@ -185,15 +194,18 @@
             this.cbWarehouses.Size = new System.Drawing.Size(393, 24);
             this.cbWarehouses.TabIndex = 0;
             // 
-            // tabPage2
+            // tbUser
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(976, 381);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tbUser.Controls.Add(this.btDelete);
+            this.tbUser.Controls.Add(this.btAddUser);
+            this.tbUser.Controls.Add(this.lvUsers);
+            this.tbUser.Location = new System.Drawing.Point(4, 25);
+            this.tbUser.Name = "tbUser";
+            this.tbUser.Padding = new System.Windows.Forms.Padding(3);
+            this.tbUser.Size = new System.Drawing.Size(976, 381);
+            this.tbUser.TabIndex = 1;
+            this.tbUser.Text = "Users";
+            this.tbUser.UseVisualStyleBackColor = true;
             // 
             // lbName
             // 
@@ -215,6 +227,61 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Logged as ";
             // 
+            // lvUsers
+            // 
+            this.lvUsers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chNumber,
+            this.chLogin,
+            this.chPassword,
+            this.chRole});
+            this.lvUsers.FullRowSelect = true;
+            this.lvUsers.Location = new System.Drawing.Point(3, 37);
+            this.lvUsers.Name = "lvUsers";
+            this.lvUsers.Size = new System.Drawing.Size(970, 341);
+            this.lvUsers.TabIndex = 0;
+            this.lvUsers.UseCompatibleStateImageBehavior = false;
+            this.lvUsers.View = System.Windows.Forms.View.Details;
+            // 
+            // chLogin
+            // 
+            this.chLogin.Text = "Login";
+            this.chLogin.Width = 200;
+            // 
+            // chPassword
+            // 
+            this.chPassword.Text = "Password";
+            this.chPassword.Width = 200;
+            // 
+            // chRole
+            // 
+            this.chRole.Text = "Role";
+            this.chRole.Width = 100;
+            // 
+            // chNumber
+            // 
+            this.chNumber.Text = "№";
+            this.chNumber.Width = 30;
+            // 
+            // btAddUser
+            // 
+            this.btAddUser.Location = new System.Drawing.Point(6, 6);
+            this.btAddUser.Name = "btAddUser";
+            this.btAddUser.Size = new System.Drawing.Size(91, 27);
+            this.btAddUser.TabIndex = 1;
+            this.btAddUser.Text = "Add";
+            this.btAddUser.UseVisualStyleBackColor = true;
+            this.btAddUser.Click += new System.EventHandler(this.btAddUser_Click);
+            // 
+            // btDelete
+            // 
+            this.btDelete.Location = new System.Drawing.Point(103, 6);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(91, 27);
+            this.btDelete.TabIndex = 2;
+            this.btDelete.Text = "Delete";
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -222,7 +289,7 @@
             this.ClientSize = new System.Drawing.Size(984, 462);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbName);
-            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.tc);
             this.Controls.Add(this.statusMain);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -237,9 +304,10 @@
             this.menuStrip1.PerformLayout();
             this.statusMain.ResumeLayout(false);
             this.statusMain.PerformLayout();
-            this.tabControl.ResumeLayout(false);
+            this.tc.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tbUser.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,9 +320,9 @@
         private System.Windows.Forms.StatusStrip statusMain;
         private System.Windows.Forms.ToolStripStatusLabel tsMainLable;
         private System.Windows.Forms.ToolStripStatusLabel toolStripMain;
-        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabControl tc;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tbUser;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.ComboBox cbWarehouses;
@@ -266,6 +334,13 @@
         private System.Windows.Forms.ListView lvWarehouseElements;
         private System.Windows.Forms.ColumnHeader chProductName;
         private System.Windows.Forms.ColumnHeader chCount;
+        private System.Windows.Forms.ListView lvUsers;
+        private System.Windows.Forms.ColumnHeader chNumber;
+        private System.Windows.Forms.ColumnHeader chLogin;
+        private System.Windows.Forms.ColumnHeader chPassword;
+        private System.Windows.Forms.ColumnHeader chRole;
+        private System.Windows.Forms.Button btAddUser;
+        private System.Windows.Forms.Button btDelete;
     }
 }
 

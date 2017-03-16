@@ -64,6 +64,7 @@
     <Compile Include="SaleOrderRepository.cs" />
     <Compile Include="ShopRepository.cs" />
     <Compile Include="UserRepository.cs" />
+    <Compile Include="WarehouseElementRepository.cs" />
     <Compile Include="WarehouseRepository.cs" />
   </ItemGroup>
   <ItemGroup>

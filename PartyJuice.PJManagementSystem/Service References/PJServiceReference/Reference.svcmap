@@ -28,6 +28,7 @@
     <MetadataFile FileName="PJService1.xsd" MetadataType="Schema" ID="cf2bb157-804b-47c8-946e-5e2cb8fde435" SourceId="1" SourceUrl="http://localhost:61250/PJService.svc?xsd=xsd1" />
     <MetadataFile FileName="PJService2.xsd" MetadataType="Schema" ID="3ef43c0b-ea80-40eb-a2f7-61c0b807f4fb" SourceId="1" SourceUrl="http://localhost:61250/PJService.svc?xsd=xsd2" />
     <MetadataFile FileName="PJService3.xsd" MetadataType="Schema" ID="2e02b041-ded6-43eb-9f70-e37562f4d67a" SourceId="1" SourceUrl="http://localhost:61250/PJService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PJService4.xsd" MetadataType="Schema" ID="7e1abbf3-345e-45f9-8ce5-eeafae113d5b" SourceId="1" SourceUrl="http://localhost:61250/PJService.svc?xsd=xsd4" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

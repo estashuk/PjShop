@@ -15,294 +15,6 @@ namespace PartyJuice.PJManagementSystem.PJServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PJShop", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
-    [System.SerializableAttribute()]
-    public partial class PJShop : PartyJuice.PJManagementSystem.PJServiceReference.NameEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.Address ShopAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumber[] ShopPhoneNumbersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.Warehouse[] WarehousesField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.Address ShopAddress {
-            get {
-                return this.ShopAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShopAddressField, value) != true)) {
-                    this.ShopAddressField = value;
-                    this.RaisePropertyChanged("ShopAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumber[] ShopPhoneNumbers {
-            get {
-                return this.ShopPhoneNumbersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShopPhoneNumbersField, value) != true)) {
-                    this.ShopPhoneNumbersField = value;
-                    this.RaisePropertyChanged("ShopPhoneNumbers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.Warehouse[] Warehouses {
-            get {
-                return this.WarehousesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WarehousesField, value) != true)) {
-                    this.WarehousesField = value;
-                    this.RaisePropertyChanged("Warehouses");
-                }
-            }
-        }
-
-        public override string ToString()
-        {
-            return this.Name;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IdEntity", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Address))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumber))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Price))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Client))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.DiscountCard))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.SaleOrder))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.User))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.PurchaseInvoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.NameEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.PJShop))]
-    public partial class IdEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsDeletedField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsDeleted {
-            get {
-                return this.IsDeletedField;
-            }
-            set {
-                if ((this.IsDeletedField.Equals(value) != true)) {
-                    this.IsDeletedField = value;
-                    this.RaisePropertyChanged("IsDeleted");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Address", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
-    [System.SerializableAttribute()]
-    public partial class Address : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.Countries CountryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StreetField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TownField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.Countries Country {
-            get {
-                return this.CountryField;
-            }
-            set {
-                if ((this.CountryField.Equals(value) != true)) {
-                    this.CountryField = value;
-                    this.RaisePropertyChanged("Country");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Number {
-            get {
-                return this.NumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NumberField, value) != true)) {
-                    this.NumberField = value;
-                    this.RaisePropertyChanged("Number");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Street {
-            get {
-                return this.StreetField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StreetField, value) != true)) {
-                    this.StreetField = value;
-                    this.RaisePropertyChanged("Street");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Town {
-            get {
-                return this.TownField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TownField, value) != true)) {
-                    this.TownField = value;
-                    this.RaisePropertyChanged("Town");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PhoneNumber", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
-    [System.SerializableAttribute()]
-    public partial class PhoneNumber : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumberKind KindField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NumberField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumberKind Kind {
-            get {
-                return this.KindField;
-            }
-            set {
-                if ((this.KindField.Equals(value) != true)) {
-                    this.KindField = value;
-                    this.RaisePropertyChanged("Kind");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Number {
-            get {
-                return this.NumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NumberField, value) != true)) {
-                    this.NumberField = value;
-                    this.RaisePropertyChanged("Number");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="WarehouseElement", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
-    [System.SerializableAttribute()]
-    public partial class WarehouseElement : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.Drink DrinkField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Count {
-            get {
-                return this.CountField;
-            }
-            set {
-                if ((this.CountField.Equals(value) != true)) {
-                    this.CountField = value;
-                    this.RaisePropertyChanged("Count");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.Drink Drink {
-            get {
-                return this.DrinkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DrinkField, value) != true)) {
-                    this.DrinkField = value;
-                    this.RaisePropertyChanged("Drink");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Price", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
-    [System.SerializableAttribute()]
-    public partial class Price : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double DrinkPriceField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double DrinkPrice {
-            get {
-                return this.DrinkPriceField;
-            }
-            set {
-                if ((this.DrinkPriceField.Equals(value) != true)) {
-                    this.DrinkPriceField = value;
-                    this.RaisePropertyChanged("DrinkPrice");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Client", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
     [System.SerializableAttribute()]
     public partial class Client : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
@@ -422,6 +134,65 @@ namespace PartyJuice.PJManagementSystem.PJServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdEntity", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.DiscountCard))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumber))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.SaleOrder))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.NameEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.DrinkType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Producer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Address))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Warehouse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Drink))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Price))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.User))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.PurchaseInvoice))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Client))]
+    public partial class IdEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsDeletedField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsDeleted {
+            get {
+                return this.IsDeletedField;
+            }
+            set {
+                if ((this.IsDeletedField.Equals(value) != true)) {
+                    this.IsDeletedField = value;
+                    this.RaisePropertyChanged("IsDeleted");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DiscountCard", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
     [System.SerializableAttribute()]
     public partial class DiscountCard : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
@@ -452,6 +223,45 @@ namespace PartyJuice.PJManagementSystem.PJServiceReference {
             }
             set {
                 if ((this.NumberField.Equals(value) != true)) {
+                    this.NumberField = value;
+                    this.RaisePropertyChanged("Number");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PhoneNumber", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
+    [System.SerializableAttribute()]
+    public partial class PhoneNumber : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumberKind KindField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NumberField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumberKind Kind {
+            get {
+                return this.KindField;
+            }
+            set {
+                if ((this.KindField.Equals(value) != true)) {
+                    this.KindField = value;
+                    this.RaisePropertyChanged("Kind");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Number {
+            get {
+                return this.NumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumberField, value) != true)) {
                     this.NumberField = value;
                     this.RaisePropertyChanged("Number");
                 }
@@ -573,6 +383,322 @@ namespace PartyJuice.PJManagementSystem.PJServiceReference {
                 if ((object.ReferenceEquals(this.WarehouseField, value) != true)) {
                     this.WarehouseField = value;
                     this.RaisePropertyChanged("Warehouse");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WarehouseElement", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
+    [System.SerializableAttribute()]
+    public partial class WarehouseElement : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PartyJuice.PJManagementSystem.PJServiceReference.Drink DrinkField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PartyJuice.PJManagementSystem.PJServiceReference.Drink Drink {
+            get {
+                return this.DrinkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DrinkField, value) != true)) {
+                    this.DrinkField = value;
+                    this.RaisePropertyChanged("Drink");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NameEntity", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.DrinkType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Producer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Warehouse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Drink))]
+    public partial class NameEntity : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DrinkType", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
+    [System.SerializableAttribute()]
+    public partial class DrinkType : PartyJuice.PJManagementSystem.PJServiceReference.NameEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PartyJuice.PJManagementSystem.PJServiceReference.DrinkType ParentDrinkTypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PartyJuice.PJManagementSystem.PJServiceReference.DrinkType ParentDrinkType {
+            get {
+                return this.ParentDrinkTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParentDrinkTypeField, value) != true)) {
+                    this.ParentDrinkTypeField = value;
+                    this.RaisePropertyChanged("ParentDrinkType");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Producer", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
+    [System.SerializableAttribute()]
+    public partial class Producer : PartyJuice.PJManagementSystem.PJServiceReference.NameEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PartyJuice.PJManagementSystem.PJServiceReference.Address AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumber[] PhoneNumberField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PartyJuice.PJManagementSystem.PJServiceReference.Address Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumber[] PhoneNumber {
+            get {
+                return this.PhoneNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneNumberField, value) != true)) {
+                    this.PhoneNumberField = value;
+                    this.RaisePropertyChanged("PhoneNumber");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Address", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
+    [System.SerializableAttribute()]
+    public partial class Address : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PartyJuice.PJManagementSystem.PJServiceReference.Countries CountryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StreetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TownField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PartyJuice.PJManagementSystem.PJServiceReference.Countries Country {
+            get {
+                return this.CountryField;
+            }
+            set {
+                if ((this.CountryField.Equals(value) != true)) {
+                    this.CountryField = value;
+                    this.RaisePropertyChanged("Country");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Number {
+            get {
+                return this.NumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumberField, value) != true)) {
+                    this.NumberField = value;
+                    this.RaisePropertyChanged("Number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Street {
+            get {
+                return this.StreetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StreetField, value) != true)) {
+                    this.StreetField = value;
+                    this.RaisePropertyChanged("Street");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Town {
+            get {
+                return this.TownField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TownField, value) != true)) {
+                    this.TownField = value;
+                    this.RaisePropertyChanged("Town");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Warehouse", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
+    [System.SerializableAttribute()]
+    public partial class Warehouse : PartyJuice.PJManagementSystem.PJServiceReference.NameEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement[] DrinkElementsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement[] DrinkElements {
+            get {
+                return this.DrinkElementsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DrinkElementsField, value) != true)) {
+                    this.DrinkElementsField = value;
+                    this.RaisePropertyChanged("DrinkElements");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Drink", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
+    [System.SerializableAttribute()]
+    public partial class Drink : PartyJuice.PJManagementSystem.PJServiceReference.NameEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PartyJuice.PJManagementSystem.PJServiceReference.DrinkType DrinkTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PartyJuice.PJManagementSystem.PJServiceReference.Price PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PartyJuice.PJManagementSystem.PJServiceReference.Producer ProducerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double VolumeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PartyJuice.PJManagementSystem.PJServiceReference.DrinkType DrinkType {
+            get {
+                return this.DrinkTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DrinkTypeField, value) != true)) {
+                    this.DrinkTypeField = value;
+                    this.RaisePropertyChanged("DrinkType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PartyJuice.PJManagementSystem.PJServiceReference.Price Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PriceField, value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PartyJuice.PJManagementSystem.PJServiceReference.Producer Producer {
+            get {
+                return this.ProducerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProducerField, value) != true)) {
+                    this.ProducerField = value;
+                    this.RaisePropertyChanged("Producer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Volume {
+            get {
+                return this.VolumeField;
+            }
+            set {
+                if ((this.VolumeField.Equals(value) != true)) {
+                    this.VolumeField = value;
+                    this.RaisePropertyChanged("Volume");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Price", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
+    [System.SerializableAttribute()]
+    public partial class Price : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DrinkPriceField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double DrinkPrice {
+            get {
+                return this.DrinkPriceField;
+            }
+            set {
+                if ((this.DrinkPriceField.Equals(value) != true)) {
+                    this.DrinkPriceField = value;
+                    this.RaisePropertyChanged("DrinkPrice");
                 }
             }
         }
@@ -720,193 +846,32 @@ namespace PartyJuice.PJManagementSystem.PJServiceReference {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NameEntity", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Drink))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.DrinkType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Producer))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.Warehouse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PartyJuice.PJManagementSystem.PJServiceReference.PJShop))]
-    public partial class NameEntity : PartyJuice.PJManagementSystem.PJServiceReference.IdEntity {
+    [System.Runtime.Serialization.DataContractAttribute(Name="Sex", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums")]
+    public enum Sex : int {
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Male = 0,
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Female = 1,
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Drink", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
-    [System.SerializableAttribute()]
-    public partial class Drink : PartyJuice.PJManagementSystem.PJServiceReference.NameEntity {
+    [System.Runtime.Serialization.DataContractAttribute(Name="PhoneNumberKind", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums")]
+    public enum PhoneNumberKind : int {
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.DrinkType DrinkTypeField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Mobile = 0,
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.Price PriceField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Work = 1,
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.Producer ProducerField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Home = 2,
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double VolumeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.DrinkType DrinkType {
-            get {
-                return this.DrinkTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DrinkTypeField, value) != true)) {
-                    this.DrinkTypeField = value;
-                    this.RaisePropertyChanged("DrinkType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.Price Price {
-            get {
-                return this.PriceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PriceField, value) != true)) {
-                    this.PriceField = value;
-                    this.RaisePropertyChanged("Price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.Producer Producer {
-            get {
-                return this.ProducerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProducerField, value) != true)) {
-                    this.ProducerField = value;
-                    this.RaisePropertyChanged("Producer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Volume {
-            get {
-                return this.VolumeField;
-            }
-            set {
-                if ((this.VolumeField.Equals(value) != true)) {
-                    this.VolumeField = value;
-                    this.RaisePropertyChanged("Volume");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DrinkType", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
-    [System.SerializableAttribute()]
-    public partial class DrinkType : PartyJuice.PJManagementSystem.PJServiceReference.NameEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.DrinkType ParentDrinkTypeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.DrinkType ParentDrinkType {
-            get {
-                return this.ParentDrinkTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ParentDrinkTypeField, value) != true)) {
-                    this.ParentDrinkTypeField = value;
-                    this.RaisePropertyChanged("ParentDrinkType");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Producer", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
-    [System.SerializableAttribute()]
-    public partial class Producer : PartyJuice.PJManagementSystem.PJServiceReference.NameEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.Address AddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumber[] PhoneNumberField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.Address Address {
-            get {
-                return this.AddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
-                    this.AddressField = value;
-                    this.RaisePropertyChanged("Address");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.PhoneNumber[] PhoneNumber {
-            get {
-                return this.PhoneNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneNumberField, value) != true)) {
-                    this.PhoneNumberField = value;
-                    this.RaisePropertyChanged("PhoneNumber");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Warehouse", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity")]
-    [System.SerializableAttribute()]
-    public partial class Warehouse : PartyJuice.PJManagementSystem.PJServiceReference.NameEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement[] DrinkElementsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement[] DrinkElements {
-            get {
-                return this.DrinkElementsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DrinkElementsField, value) != true)) {
-                    this.DrinkElementsField = value;
-                    this.RaisePropertyChanged("DrinkElements");
-                }
-            }
-        }
-
-        public override string ToString()
-        {
-            return this.Name;
-        }
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Office = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -936,34 +901,6 @@ namespace PartyJuice.PJManagementSystem.PJServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PhoneNumberKind", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums")]
-    public enum PhoneNumberKind : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Mobile = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Work = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Home = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Office = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Sex", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums")]
-    public enum Sex : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Male = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Female = 1,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Roles", Namespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums")]
     public enum Roles : int {
         
@@ -985,22 +922,22 @@ namespace PartyJuice.PJManagementSystem.PJServiceReference {
     public interface IPJService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetShops", ReplyAction="http://tempuri.org/IPJService/GetShopsResponse")]
-        PartyJuice.PJManagementSystem.PJServiceReference.PJShop[] GetShops();
+        PartyJuice.PJService.ModelsHelper.ShopModel[] GetShops();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetShops", ReplyAction="http://tempuri.org/IPJService/GetShopsResponse")]
-        System.Threading.Tasks.Task<PartyJuice.PJManagementSystem.PJServiceReference.PJShop[]> GetShopsAsync();
+        System.Threading.Tasks.Task<PartyJuice.PJService.ModelsHelper.ShopModel[]> GetShopsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetWarehouses", ReplyAction="http://tempuri.org/IPJService/GetWarehousesResponse")]
-        PartyJuice.PJManagementSystem.PJServiceReference.Warehouse[] GetWarehouses(PartyJuice.PJManagementSystem.PJServiceReference.PJShop shop);
+        PartyJuice.PJService.ModelsHelper.WarehouseModel[] GetWarehouses(System.Guid shopId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetWarehouses", ReplyAction="http://tempuri.org/IPJService/GetWarehousesResponse")]
-        System.Threading.Tasks.Task<PartyJuice.PJManagementSystem.PJServiceReference.Warehouse[]> GetWarehousesAsync(PartyJuice.PJManagementSystem.PJServiceReference.PJShop shop);
+        System.Threading.Tasks.Task<PartyJuice.PJService.ModelsHelper.WarehouseModel[]> GetWarehousesAsync(System.Guid shopId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetWarehouseElements", ReplyAction="http://tempuri.org/IPJService/GetWarehouseElementsResponse")]
-        PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement[] GetWarehouseElements(PartyJuice.PJManagementSystem.PJServiceReference.Warehouse warehouse);
+        PartyJuice.PJService.ModelsHelper.WarehouseElementModel[] GetWarehouseElements(System.Guid warehouseId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetWarehouseElements", ReplyAction="http://tempuri.org/IPJService/GetWarehouseElementsResponse")]
-        System.Threading.Tasks.Task<PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement[]> GetWarehouseElementsAsync(PartyJuice.PJManagementSystem.PJServiceReference.Warehouse warehouse);
+        System.Threading.Tasks.Task<PartyJuice.PJService.ModelsHelper.WarehouseElementModel[]> GetWarehouseElementsAsync(System.Guid warehouseId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetClients", ReplyAction="http://tempuri.org/IPJService/GetClientsResponse")]
         PartyJuice.PJManagementSystem.PJServiceReference.Client[] GetClients();
@@ -1049,6 +986,42 @@ namespace PartyJuice.PJManagementSystem.PJServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/UserValidation", ReplyAction="http://tempuri.org/IPJService/UserValidationResponse")]
         System.Threading.Tasks.Task<bool> UserValidationAsync(string login, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/AddUser", ReplyAction="http://tempuri.org/IPJService/AddUserResponse")]
+        void AddUser(PartyJuice.PJManagementSystem.PJServiceReference.User newUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/AddUser", ReplyAction="http://tempuri.org/IPJService/AddUserResponse")]
+        System.Threading.Tasks.Task AddUserAsync(PartyJuice.PJManagementSystem.PJServiceReference.User newUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetAllUsers", ReplyAction="http://tempuri.org/IPJService/GetAllUsersResponse")]
+        PartyJuice.PJService.ModelsHelper.UserModel[] GetAllUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetAllUsers", ReplyAction="http://tempuri.org/IPJService/GetAllUsersResponse")]
+        System.Threading.Tasks.Task<PartyJuice.PJService.ModelsHelper.UserModel[]> GetAllUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/DeleteUser", ReplyAction="http://tempuri.org/IPJService/DeleteUserResponse")]
+        void DeleteUser(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/DeleteUser", ReplyAction="http://tempuri.org/IPJService/DeleteUserResponse")]
+        System.Threading.Tasks.Task DeleteUserAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetUser", ReplyAction="http://tempuri.org/IPJService/GetUserResponse")]
+        PartyJuice.PJManagementSystem.PJServiceReference.User GetUser(string login, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetUser", ReplyAction="http://tempuri.org/IPJService/GetUserResponse")]
+        System.Threading.Tasks.Task<PartyJuice.PJManagementSystem.PJServiceReference.User> GetUserAsync(string login, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/UserLoginValidation", ReplyAction="http://tempuri.org/IPJService/UserLoginValidationResponse")]
+        bool UserLoginValidation(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/UserLoginValidation", ReplyAction="http://tempuri.org/IPJService/UserLoginValidationResponse")]
+        System.Threading.Tasks.Task<bool> UserLoginValidationAsync(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetWarehouseElement", ReplyAction="http://tempuri.org/IPJService/GetWarehouseElementResponse")]
+        PartyJuice.PJService.ModelsHelper.WarehouseElementModel GetWarehouseElement(System.Guid elementId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPJService/GetWarehouseElement", ReplyAction="http://tempuri.org/IPJService/GetWarehouseElementResponse")]
+        System.Threading.Tasks.Task<PartyJuice.PJService.ModelsHelper.WarehouseElementModel> GetWarehouseElementAsync(System.Guid elementId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1078,28 +1051,28 @@ namespace PartyJuice.PJManagementSystem.PJServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PartyJuice.PJManagementSystem.PJServiceReference.PJShop[] GetShops() {
+        public PartyJuice.PJService.ModelsHelper.ShopModel[] GetShops() {
             return base.Channel.GetShops();
         }
         
-        public System.Threading.Tasks.Task<PartyJuice.PJManagementSystem.PJServiceReference.PJShop[]> GetShopsAsync() {
+        public System.Threading.Tasks.Task<PartyJuice.PJService.ModelsHelper.ShopModel[]> GetShopsAsync() {
             return base.Channel.GetShopsAsync();
         }
         
-        public PartyJuice.PJManagementSystem.PJServiceReference.Warehouse[] GetWarehouses(PartyJuice.PJManagementSystem.PJServiceReference.PJShop shop) {
-            return base.Channel.GetWarehouses(shop);
+        public PartyJuice.PJService.ModelsHelper.WarehouseModel[] GetWarehouses(System.Guid shopId) {
+            return base.Channel.GetWarehouses(shopId);
         }
         
-        public System.Threading.Tasks.Task<PartyJuice.PJManagementSystem.PJServiceReference.Warehouse[]> GetWarehousesAsync(PartyJuice.PJManagementSystem.PJServiceReference.PJShop shop) {
-            return base.Channel.GetWarehousesAsync(shop);
+        public System.Threading.Tasks.Task<PartyJuice.PJService.ModelsHelper.WarehouseModel[]> GetWarehousesAsync(System.Guid shopId) {
+            return base.Channel.GetWarehousesAsync(shopId);
         }
         
-        public PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement[] GetWarehouseElements(PartyJuice.PJManagementSystem.PJServiceReference.Warehouse warehouse) {
-            return base.Channel.GetWarehouseElements(warehouse);
+        public PartyJuice.PJService.ModelsHelper.WarehouseElementModel[] GetWarehouseElements(System.Guid warehouseId) {
+            return base.Channel.GetWarehouseElements(warehouseId);
         }
         
-        public System.Threading.Tasks.Task<PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement[]> GetWarehouseElementsAsync(PartyJuice.PJManagementSystem.PJServiceReference.Warehouse warehouse) {
-            return base.Channel.GetWarehouseElementsAsync(warehouse);
+        public System.Threading.Tasks.Task<PartyJuice.PJService.ModelsHelper.WarehouseElementModel[]> GetWarehouseElementsAsync(System.Guid warehouseId) {
+            return base.Channel.GetWarehouseElementsAsync(warehouseId);
         }
         
         public PartyJuice.PJManagementSystem.PJServiceReference.Client[] GetClients() {
@@ -1164,6 +1137,54 @@ namespace PartyJuice.PJManagementSystem.PJServiceReference {
         
         public System.Threading.Tasks.Task<bool> UserValidationAsync(string login, string password) {
             return base.Channel.UserValidationAsync(login, password);
+        }
+        
+        public void AddUser(PartyJuice.PJManagementSystem.PJServiceReference.User newUser) {
+            base.Channel.AddUser(newUser);
+        }
+        
+        public System.Threading.Tasks.Task AddUserAsync(PartyJuice.PJManagementSystem.PJServiceReference.User newUser) {
+            return base.Channel.AddUserAsync(newUser);
+        }
+        
+        public PartyJuice.PJService.ModelsHelper.UserModel[] GetAllUsers() {
+            return base.Channel.GetAllUsers();
+        }
+        
+        public System.Threading.Tasks.Task<PartyJuice.PJService.ModelsHelper.UserModel[]> GetAllUsersAsync() {
+            return base.Channel.GetAllUsersAsync();
+        }
+        
+        public void DeleteUser(System.Guid id) {
+            base.Channel.DeleteUser(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteUserAsync(System.Guid id) {
+            return base.Channel.DeleteUserAsync(id);
+        }
+        
+        public PartyJuice.PJManagementSystem.PJServiceReference.User GetUser(string login, string password) {
+            return base.Channel.GetUser(login, password);
+        }
+        
+        public System.Threading.Tasks.Task<PartyJuice.PJManagementSystem.PJServiceReference.User> GetUserAsync(string login, string password) {
+            return base.Channel.GetUserAsync(login, password);
+        }
+        
+        public bool UserLoginValidation(string login) {
+            return base.Channel.UserLoginValidation(login);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UserLoginValidationAsync(string login) {
+            return base.Channel.UserLoginValidationAsync(login);
+        }
+        
+        public PartyJuice.PJService.ModelsHelper.WarehouseElementModel GetWarehouseElement(System.Guid elementId) {
+            return base.Channel.GetWarehouseElement(elementId);
+        }
+        
+        public System.Threading.Tasks.Task<PartyJuice.PJService.ModelsHelper.WarehouseElementModel> GetWarehouseElementAsync(System.Guid elementId) {
+            return base.Channel.GetWarehouseElementAsync(elementId);
         }
     }
 }

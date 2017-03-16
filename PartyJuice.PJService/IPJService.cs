@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ServiceModel;
 using PartyJuice.DbEntity;
+using PartyJuice.PJService.ModelsHelper;
 
 namespace PartyJuice.PJService
 {
@@ -10,11 +11,11 @@ namespace PartyJuice.PJService
     public interface IPJService
     {
         [OperationContract]
-        List<PJShop> GetShops();
+        List<ShopModel> GetShops();
         [OperationContract]
-        List<Warehouse> GetWarehouses(PJShop shop);
+        List<WarehouseModel> GetWarehouses(Guid shopId);
         [OperationContract]
-        List<WarehouseElement> GetWarehouseElements(Warehouse warehouse);
+        List<WarehouseElementModel> GetWarehouseElements(Guid warehouseId);
         [OperationContract]
         List<Client> GetClients();
         [OperationContract]
@@ -32,6 +33,24 @@ namespace PartyJuice.PJService
 
         [OperationContract]
         bool UserValidation(string login, string password);
+
+        [OperationContract]
+        void AddUser(User newUser);
+
+        [OperationContract]
+        List<UserModel> GetAllUsers();
+
+        [OperationContract]
+        void DeleteUser(Guid id);
+
+        [OperationContract]
+        User GetUser(string login, string password);
+
+        [OperationContract]
+        bool UserLoginValidation(string login);
+
+        [OperationContract]
+        WarehouseElementModel GetWarehouseElement(Guid elementId);
 
     }
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PartyJuice.DbEntity.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="PhoneNumberKind">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Mobile" />
+      <xs:enumeration value="Work" />
+      <xs:enumeration value="Home" />
+      <xs:enumeration value="Office" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PhoneNumberKind" nillable="true" type="tns:PhoneNumberKind" />
+  <xs:simpleType name="Sex">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Sex" nillable="true" type="tns:Sex" />
+  <xs:simpleType name="Countries">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="England" />
+      <xs:enumeration value="USA" />
+      <xs:enumeration value="France" />
+      <xs:enumeration value="Ukraine" />
+      <xs:enumeration value="Russia" />
+      <xs:enumeration value="Germany" />
+      <xs:enumeration value="Brazil" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Countries" nillable="true" type="tns:Countries" />
+  <xs:simpleType name="Roles">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Admin" />
+      <xs:enumeration value="Manager" />
+      <xs:enumeration value="Seller" />
+      <xs:enumeration value="StoreKeeper" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Roles" nillable="true" type="tns:Roles" />
+</xs:schema>

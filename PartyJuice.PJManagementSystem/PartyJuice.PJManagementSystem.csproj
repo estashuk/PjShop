@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +110,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\PartyJuice.PJService.ModelsHelper.ShopModel.datasource" />
+    <None Include="Properties\DataSources\PartyJuice.PJService.ModelsHelper.UserModel.datasource" />
+    <None Include="Properties\DataSources\PartyJuice.PJService.ModelsHelper.WarehouseElementModel.datasource" />
+    <None Include="Properties\DataSources\PartyJuice.PJService.ModelsHelper.WarehouseModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -113,19 +126,13 @@
     <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.Client.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.PJShop.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.PurchaseInvoice.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.SaleOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.Warehouse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.WarehouseElement.datasource">
+    <None Include="Service References\PJServiceReference\PartyJuice.PJManagementSystem.PJServiceReference.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PJServiceReference\PJService.wsdl" />
@@ -161,6 +168,9 @@
     <None Include="Service References\PJServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\PJServiceReference\PJService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\PJServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -181,6 +191,13 @@
   <ItemGroup>
     <Content Include="PJicon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PartyJuice.PJService\PartyJuice.PJService.csproj">
+      <Project>{692f6ee4-25b4-44f9-814c-76581f7b4306}</Project>
+      <Name>PartyJuice.PJService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
